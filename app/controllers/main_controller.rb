@@ -7,21 +7,22 @@ class MainController < UIViewController
 
 
   def clear_entry(sender)
-    label.text = ""
+    @computation = []
+    self.update_entries_display
   end
 
   def clear_last(sender)
-    @entries.pop
+    @computation.pop
     self.update_entries_display
   end
 
   def add_entry(sender)
-    @entries ||= []
-    @entries << sender.text
+    @computation ||= []
+    @computation << sender.titleLabel.text
     self.update_entries_display
   end
 
   def update_entries_display
-    entries.text = @entries.join(" ")
+    entries.text = @computation.join(" ")
   end
 end
