@@ -59,4 +59,9 @@ class MainController < UIViewController
   def update_result_entry
     display.text = @result.to_s
   end
+  
+  # TODO:
+  # fix equal to sign
+  # fix operator after equality
+  # fix deleting past result
 end
